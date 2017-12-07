@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/themes/prism.min.css" />
+		<link rel="stylesheet" href="../../css/common.css">
+	</head>
+	<body>
+
+<!-- nav -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-navbar">
+	<a class="navbar-brand" href="/">GyuMin</a>
+</nav>
+
+<div class="container mt70">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Firebase</h2>
+
+		</div>		
+	</div>
+
+	<div class="row mt10">
+		<div class="col-md-12">
+			<h5>[WEB]Authentication</h5>
+
+			<a href="https://console.firebase.google.com/" target="_blank">https://console.firebase.google.com/</a><br />
+	Firebase Console로 이동한다.
+	<img src="./image/authentication_01.png" alt="" />
+	프로젝트 이름을 입력하고, 국가/지역을 선택 후 프로젝트를 생성한다.
+	<img src="./image/authentication_02.png" alt="" />
+	Authentication메뉴를 선택한 후 로그인방법 탭을 선택한다.
+	<img src="./image/authentication_03.png" alt="" />
+	Google을 선택하 사용설정을 선택하여 저장한다.
+	<img src="./image/authentication_04.png" alt="" />
+	사용 설정됨 상태를 확인한다.
+	<img src="./image/authentication_05.png" alt="" />
+	오른쪽 상단의 웹설정을 클릭하면 html에 삽입해야 할 태그가 출력된다.<br />
+	실행을 위해 Firebase Web Smaples를 클릭한다.
+	<img src="./image/authentication_06.png" alt="" />
+	Firebase가 제공하는 서비스의 샘플 링크들이 나열되는데 Authentication의 Web Supported를 클릭한다.
+	<a href="https://github.com/firebase/quickstart-js" target="_blank">https://github.com/firebase/quickstart-js</a>
+	<img src="./image/authentication_07.png" alt="" />
+	github에서 Sample소스를 다운로드 받아 압축을 풀어 웹서버를 구축 한 뒤에 auth/index.html을 실행한다.
+	<img src="./image/authentication_08.png" alt="" />
+	위와 같이 브라우저에서 auth에 관련된 샘플소스 리스트가 나열되는데 여기서 Google sign-in using Redirect를 클릭한다.
+	<img src="./image/authentication_09.png" alt="" />
+	샘플소스를 그냥 실행하면 위와 같이 SIGN IN WITH GOOGLE버튼이 비활성화 되어있다.
+	<img src="./image/authentication_10.png" alt="" />
+	google_redirect.html파일을 열어 해당 부분을 위의 웹설정 클릭시 나왔던 내용으로 대체한다.
+	<img src="./image/authentication_11.png" alt="" />
+	위와 같이 소스를 수정한다.
+	<img src="./image/authentication_12.png" alt="" />
+	SIGN IN WITH GOOGLE버튼이 활성화된다.
+	<img src="./image/authentication_13.png" alt="" />
+	SIGN IN WITH GOOGLE버튼을 눌러 구글 계정으로 로그인을 정상적으로 하면 위와 같이 User정보를 확인할 수 있다.
+
+
+		</div>
+	</div>
+
+	<div class="row mt10">
+		<div class="col-md-12 text-right">
+			<a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a>
+		</div>
+	</div>
+	
+	<hr>
+
+	<footer>
+		<p>&copy; Copyright GyuMin</p>
+	</footer>
+</div> <!-- /container -->
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/prism.min.js"></script>
+		<script src="../../script/common.js"></script>
+	</body>
+</html>

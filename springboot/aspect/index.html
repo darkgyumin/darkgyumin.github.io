@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/themes/prism.min.css" />
+		<link rel="stylesheet" href="../../css/common.css">
+	</head>
+	<body>
+
+<!-- nav -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-navbar">
+	<a class="navbar-brand" href="/">GyuMin</a>
+</nav>
+
+<div class="container mt70">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Aspect</h2>
+
+		</div>		
+	</div>
+
+	<div class="row mt10">
+		<div class="col-md-12">
+			<h5>Aspect 설정</h5>
+
+			<img src="./image/aspect-01.png" alt="" />
+
+<pre>
+<code class="language-java">
+package kr.pe.withme;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class SampleAspect {
+	
+	@Before("execution(* kr.pe.withme..*.*(..))")
+	public void beforeSample(JoinPoint jp) {
+		System.out.println("beforeSample");
+	}
+	
+	@After("execution(* kr.pe.withme..*.*(..))")
+	public void afterSample(JoinPoint jp) {
+		System.out.println("afterSample");
+	}
+}
+</code>
+</pre>	
+
+<pre>
+<code class="language-java">
+package kr.pe.withme.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+	
+	@RequestMapping(value="/hello", method=RequestMethod.GET)
+	public String hello() throws Exception {
+		System.out.println("===========================HelloController hello");
+		
+		return null;
+	}
+}
+</code>
+</pre>	
+
+			<img src="./image/aspect-02.png" alt="" />
+
+		</div>
+	</div>
+
+	<div class="row mt10">
+		<div class="col-md-12 text-right">
+			<a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a>
+		</div>
+	</div>
+	
+	<hr>
+
+	<footer>
+		<p>&copy; Copyright GyuMin</p>
+	</footer>
+</div> <!-- /container -->
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-java.min.js"></script>
+		<script src="../../script/common.js"></script>
+	</body>
+</html>

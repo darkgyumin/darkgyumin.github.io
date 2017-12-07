@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/themes/prism.min.css" />
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+
+<!-- nav -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-navbar">
+    <a class="navbar-brand" href="/">GyuMin</a>
+</nav>
+
+<div class="container mt70">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Php</h2>
+
+        </div>
+    </div>
+
+    <div class="row mt10">
+        <div class="col-md-12">
+            <h5>$_SEVER 변수</h5>
+
+            <div class="table-responsive mt20">
+                <table class="table table-bordered">
+                    <colgroup>
+                        <col width="30%" />
+                        <col width="70%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>SERVER_NAME</th>
+                            <td>
+                                사이트 도메인 정보
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>SERVER_PORT</th>
+                            <td>
+                                사이트 포트 정보
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>HTTP_USER_AGENT</th>
+                            <td>
+                                사이트 접속자의 브라우저 정보
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>REMOTE_ADDR</th>
+                            <td>
+                                사이트 접속자의 IP정보
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>HTTP_REFERER</th>
+                            <td>
+                                이전 페이지의 URL정보
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+<pre>
+<code class="language-php">
+$domain = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '';
+$port = isset($_SERVER['SERVER_PORT']) ? $_SERVER['SERVER_PORT'] : '';
+$agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+$ref = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+
+echo $domain;  //출력 withme.pe.kr
+echo $port;    //출력 80
+echo $agent;   //출력 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
+echo $ip;      //출력 127.0.0.1
+echo $ref;     //출력
+</code>
+</pre>
+
+        </div>
+    </div>
+
+    <div class="row mt10">
+        <div class="col-md-12 text-right">
+            <a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; Copyright GyuMin</p>
+    </footer>
+</div> <!-- /container -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/components/prism-php.min.js"></script>
+<script src="../../script/common.js"></script>
+</body>
+</html>
