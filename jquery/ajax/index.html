@@ -70,6 +70,23 @@ $.ajax({
 					</tr>
 				</tbody>
 			</table>
+<pre>
+<code class="language-javascript">
+$.ajax({
+	url: './product_insert.php',
+	dataType: 'json',
+	cache: false,
+	contentType: false,
+	processData: false,
+	data: new FormData(this),                         
+	type: 'POST',
+	success: function(data){
+		
+	}
+});
+</code>
+</pre>
+
 
         </div>
     </div>
