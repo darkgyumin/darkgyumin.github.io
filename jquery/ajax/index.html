@@ -21,43 +21,51 @@
 <div class="container mt70">
     <div class="row">
         <div class="col-md-12">
-            <h2><a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery.ajax()</a></h2>
+            <h2>jQuery</h2>
 
         </div>
     </div>
 
     <div class="row mt10">
         <div class="col-md-12">
+		<h5><a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery.ajax()</a></h5>
+		
             <ul>
                 <li>비동기 HTTP 요청을 수행한다.</li>
             </ul>
+
+			<h6>기본 ajax작동 예제</h6>
 <pre>
 <code class="language-javascript">
 $.ajax({
-	url: './product_item_insert.php',
-	data: '',
+	url: 'https://jsonplaceholder.typicode.com/posts',
+	data: 'userId=1',
 	dataType: "json",
-	type: 'POST',
+	timeout: '1000',
+	type: 'GET',
 	success: function(data) {
-
+		console.log(data);
 	}
 });
 </code>
 </pre>
 			<table class="table table-bordered">
 				<colgroup>
-					<col width="30%">
-					<col width="70%">
+					<col width="10%">
+					<col width="40%">
+					<col width="50%">
 				</colgroup>
 				<thead>
 					<tr>
 						<th>Keyword</th>
+						<th>Type</th>
 						<th>Description</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<th>url</th>
+						<td>String</td>
 						<td>
 							
 						</td>
@@ -65,21 +73,72 @@ $.ajax({
 					<tr>
 						<th>data</th>
 						<td>
-								
+							PlainObject or String or Array		
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>dataType</th>
+						<td>
+							PlainObject or String or Array		
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>timeout</th>
+						<td>
+							Number
+						</td>
+						<td>
+							
 						</td>
 					</tr>
+					<tr>
+						<th>success</th>
+						<td>
+							Function<br />
+							(Anything data, String textStatus, <a href="http://api.jquery.com/jQuery.ajax/#jqXHR" target="_blank">jqXHR</a> jqXHR)
+						</td>
+						<td>
+							요청 작업이 성공했을때 실행
+						</td>
+					</tr>
+					<tr>
+						<th>error</th>
+						<td>
+							Function<br />
+							(jqXHR jqXHR, String textStatus, String errorThrown)
+						</td>
+						<td>
+							요청 작업이 실패했을때 실행
+						</td>
+					</tr>
+					<tr>
+						<th>complete</th>
+						<td>
+							Function<br />
+							(jqXHR jqXHR, String textStatus)
+						</td>
+						<td>
+							요청 작업이 종료 되었을때 실행
+						</td>
+					</tr>
+
+					
 				</tbody>
 			</table>
+			
+			<h6>파일첨부 ajax작동 예제</h6>
 <pre>
 <code class="language-javascript">
 $.ajax({
-	url: './product_insert.php',
+	url: 'https://jsonplaceholder.typicode.com/posts',
+	data: new FormData(form),                         
 	dataType: 'json',
+	type: 'POST',
 	cache: false,
 	contentType: false,
 	processData: false,
-	data: new FormData(this),                         
-	type: 'POST',
 	success: function(data){
 		
 	}
