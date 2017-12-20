@@ -28,13 +28,12 @@
 
     <div class="row mt10">
         <div class="col-md-12">
-		<h5><a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery.ajax()</a></h5>
-		
+		<h5><a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery.ajax( url [, settings ] )</a></h5>
             <ul>
                 <li>비동기 HTTP 요청을 수행한다.</li>
             </ul>
 
-			<h6>기본 ajax작동 예제</h6>
+			<h6>ajax 작동예제</h6>
 <pre>
 <code class="language-javascript">
 $.ajax({
@@ -43,8 +42,122 @@ $.ajax({
 	dataType: "json",
 	timeout: '1000',
 	type: 'GET',
-	success: function(data) {
+	success: function(data, status, xhr) {
 		console.log(data);
+	},
+	error: function(xhr, status, thrown) {
+		console.log(data);
+	},
+	complete: function(xhr, status) {
+		console.log(data);
+	}
+});
+</code>
+</pre>
+
+<iframe width="100%" height="410" src="//jsfiddle.net/blackksj/vkdzx1k0/embedded/js/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+			<table class="table table-bordered">
+				<colgroup>
+					<col width="10%">
+					<col width="40%">
+					<col width="50%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>Keyword</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>url</th>
+						<td>String</td>
+						<td>
+							요청을 보낼 주소
+						</td>
+					</tr>
+					<tr>
+						<th>data</th>
+						<td>
+							PlainObject or String or Array		
+						</td>
+						<td>
+							서버로 데이터를 전송한다. 전송시 쿼리스트링 형태로 변환한다.
+						</td>
+					</tr>
+					<tr>
+						<th>dataType</th>
+						<td>
+							PlainObject or String or Array		
+						</td>
+						<td>
+							서버로부터 받은 데이터의 형태를 지정한다.<br />
+							(xml, html, script, json, jsonp, text)
+						</td>
+					</tr>
+					<tr>
+						<th>timeout</th>
+						<td>
+							Number
+						</td>
+						<td>
+							timeout에 설정된 시간이후 요청작업이 처리되지 않으면 실행을 취소한다.
+						</td>
+					</tr>
+					<tr>
+						<th>type</th>
+						<td>String(Default:GET)</td>
+						<td>
+							데이터 전송 방식(GET, PUT, POST, DELETE...)
+						</td>
+					</tr>
+					<tr>
+						<th>success</th>
+						<td>
+							Function<br />
+							(Anything data, String textStatus, <a href="http://api.jquery.com/jQuery.ajax/#jqXHR" target="_blank">jqXHR</a> jqXHR)
+						</td>
+						<td>
+							요청작업이 성공했을때 실행한다.
+						</td>
+					</tr>
+					<tr>
+						<th>error</th>
+						<td>
+							Function<br />
+							(<a href="http://api.jquery.com/jQuery.ajax/#jqXHR" target="_blank">jqXHR</a> jqXHR, String textStatus, String errorThrown)
+						</td>
+						<td>
+							요청작업이 실패했을때 실행한다.
+						</td>
+					</tr>
+					<tr>
+						<th>complete</th>
+						<td>
+							Function<br />
+							(<a href="http://api.jquery.com/jQuery.ajax/#jqXHR" target="_blank">jqXHR</a> jqXHR, String textStatus)
+						</td>
+						<td>
+							요청작업이 종료 되었을때 실행한다.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<h6>ajax 작동예제(파일)</h6>
+<pre>
+<code class="language-javascript">
+$.ajax({
+	url: '요청주소',
+	data: new FormData(form),                         
+	dataType: 'json',
+	type: 'POST',
+	contentType: false,
+	processData: false,
+	success: function(data){
+		
 	}
 });
 </code>
@@ -64,88 +177,24 @@ $.ajax({
 				</thead>
 				<tbody>
 					<tr>
-						<th>url</th>
-						<td>String</td>
+						<th>contentType</th>
 						<td>
-							
+							PlainObject or String or Arra<br />
+							(default: 'application/x-www-form-urlencoded; charset=UTF-8')
+						</td>
+						<td>
+							데이터 전송시 serialize 된 형태로 변경되게 하지 않기 위해서 false로 지정한다.
 						</td>
 					</tr>
 					<tr>
-						<th>data</th>
+						<th>processData</th>
+						<td>Boolean(default:true)</td>
 						<td>
-							PlainObject or String or Array		
+							true일 경우 data옵션 값을 쿼리스트링으로 변환한다.
 						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<th>dataType</th>
-						<td>
-							PlainObject or String or Array		
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<th>timeout</th>
-						<td>
-							Number
-						</td>
-						<td>
-							timeout에 설정된 시간이후 요청작업이 처리되지 않으면
-						</td>
-					</tr>
-					<tr>
-						<th>success</th>
-						<td>
-							Function<br />
-							(Anything data, String textStatus, <a href="http://api.jquery.com/jQuery.ajax/#jqXHR" target="_blank">jqXHR</a> jqXHR)
-						</td>
-						<td>
-							요청작업이 성공했을때 실행
-						</td>
-					</tr>
-					<tr>
-						<th>error</th>
-						<td>
-							Function<br />
-							(jqXHR jqXHR, String textStatus, String errorThrown)
-						</td>
-						<td>
-							요청작업이 실패했을때 실행
-						</td>
-					</tr>
-					<tr>
-						<th>complete</th>
-						<td>
-							Function<br />
-							(jqXHR jqXHR, String textStatus)
-						</td>
-						<td>
-							요청작업이 종료 되었을때 실행
-						</td>
-					</tr>
-
-					
+					</tr>										
 				</tbody>
 			</table>
-			
-			<h6>파일첨부 ajax작동 예제</h6>
-<pre>
-<code class="language-javascript">
-$.ajax({
-	url: 'https://jsonplaceholder.typicode.com/posts',
-	data: new FormData(form),                         
-	dataType: 'json',
-	type: 'POST',
-	cache: false,
-	contentType: false,
-	processData: false,
-	success: function(data){
-		
-	}
-});
-</code>
-</pre>
-
 
         </div>
     </div>

@@ -28,16 +28,23 @@
 
     <div class="row mt10">
         <div class="col-md-12">
-		<h5><a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery.animate()</a></h5>
+		<h5><a href="http://api.jquery.com/animate/" target="_blank">jQuery.animate( properties [, duration ] [, easing ] [, complete ] )</a></h5>
 		
             <ul>
-                <li>비동기 HTTP 요청을 수행한다.</li>
+                <li>CSS속성 셋의 애니메이션을 실행한다.</li>
             </ul>
 
-			<h6>기본 ajax작동 예제</h6>
+			<h6>animation 작동예제</h6>
 <pre>
 <code class="language-javascript">
-
+$(function() {
+	$( ".object" ).animate({
+  		top: '+=100',
+		left: '+=100'
+	}, 1000, function() {
+		// Animation complete.
+	});
+});
 </code>
 </pre>
 			<table class="table table-bordered">
