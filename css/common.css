@@ -10,6 +10,8 @@
 .mt100 {margin-top: 100px;}
 
 .bg-navbar {background-color: #9c27b0;}
+.sns {position: absolute; right: 10px;}
+.sns img {display: inline-block; width: 30px; border: 0; border-radius: 5px; margin: 0 5px 0 0;}
 
 .subject a {margin: 5px 0;}
 
