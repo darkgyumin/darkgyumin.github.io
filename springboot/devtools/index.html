@@ -22,83 +22,34 @@
 	<div class="row">
 		<div class="col-md-12">
 			<span class="" style="float: right;"><a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a></span>
-			<h2>Controller</h2>
+			<h2><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html" target="_blank">Devtools</a></h2>
+			<ul>
+				<li>spring boot 1.3.0 추가</li>
+				<li>파일의 내용이 변경될 시 자동으로 서버가 재시작 된다.</li>
+			</ul>
 		</div>		
 	</div>
 
 	<div class="row mt10">
 		<div class="col-md-12">
-
-			<h5>View-Jsp</h5>
-			
-			<h6>pom.xml</h6>
-			<div>spring-boot-starter-web에 포함된 tomcat은 JSP엔진을 포함하지 않아 pom.xml에 아래와 같이 추가를 해야한다.</div>
+			<h5>Maven</h5>
 
 <pre>
 <code class="language-xml">
 &lt;dependency>
-    &lt;groupId>org.apache.tomcat.embed&lt;/groupId>
-    &lt;artifactId>tomcat-embed-jasper&lt;/artifactId>
-    &lt;scope>provided&lt;/scope>
-&lt;/dependency>
-
-&lt;dependency>
-	&lt;groupId>javax.servlet&lt;/groupId>
-	&lt;artifactId>jstl&lt;/artifactId>
+	&lt;groupId>org.springframework.boot&lt;/groupId>
+	&lt;artifactId>spring-boot-devtools&lt;/artifactId>
 &lt;/dependency>
 </code>
 </pre>
-			<h6>HelloController.java</h6>
+			<h5>Gradle</h5>
 
 <pre>
-<code class="language-java">
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-public class HelloController {
-	
-	@RequestMapping("/")
-	public String index() {
-		return "index";
-	}
-}
+<code class="language-xml">
+compile("org.springframework.boot:spring-boot-devtools")
 </code>
-</pre>
-			<h6>application.properties</h6>
-			<div>src/main/resources/application.properties파일에 아래와 같이 jsp파일이 존재하는 폴더를 지정한다.</div>
+</pre>			
 
-<pre>
-<code class="language-properties">
-spring.mvc.view.prefix=/WEB-INF/jsp/
-spring.mvc.view.suffix=.jsp
-</code>
-</pre>
-
-			<h6>index.jsp</h6>
-
-<pre>
-<code class="language-html">
-&lt;!DOCTYPE HTML>
-&lt;html lang="en-US">
-&lt;head>
-	&lt;meta charset="UTF-8">
-	&lt;title>&lt;/title>
-&lt;/head>
-&lt;body>
-	HelloWorld!
-&lt;/body>
-&lt;/html>
-</code>
-</pre>
-			<div>위의 소스를 아래와 같은 구조로 작성한다.</div>
-			<img src="./image/controller-jsp-02.jpg" alt="" />
-
-			<div>프로젝트 폴더에서 마우스 오른쪽 클릭 -> Run As -> Spring Boot App을 실행한다.</div>
-			<img src="./image/controller-jsp-03.jpg" alt="" />
-
-			<div>브라우저에서 http://localhost:8080을 입력하면 HelloWorld!가 출력된다.</div>
-			<img src="./image/controller-jsp-04.png" alt="" />
 		</div>
 	</div>
 

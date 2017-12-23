@@ -22,26 +22,69 @@
 	<div class="row">
 		<div class="col-md-12">
 			<span class="" style="float: right;"><a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a></span>
-			<h2>Deploy</h2>
+			<h2>View(thymeleaf)</h2>
 		</div>		
 	</div>
 
 	<div class="row mt10">
 		<div class="col-md-12">
+			
+			<h6>pom.xml</h6>
+			<div></div>
 
-			<h5>Jar 배포</h5>
-			
-			<div>Jar 배포시 /WEB-INF/jsp폴더의 jsp파일이 포함되지 않아 404에러가 발생한다. jsp를 사용할 경우 war로 배포하자.(해결방법도 있음)</div>			
-			
-			<div>pom.xml파일을 선택한 뒤에 마우스 오른쪽 버튼 -> Run As -> Maven install을 실행한다.</div>
-			<img src="./image/deploy-01.jpg" alt="" />
-			
-			<div>target폴더에 아래와 같이 .jar파일이 생성된다.</div>
-			<img src="./image/deploy-02.jpg" alt="" />
-			
-			<div>커맨드 창을 열어 java -jar 파일명.jar명령을 실행하면 아래와 같이 실행된다.</div>
-			<img src="./image/deploy-03.png" alt="" />
+<pre>
+<code class="language-xml">
+&lt;dependency>
+	&lt;groupId>org.springframework.boot&lt;/groupId>
+	&lt;artifactId>spring-boot-starter-thymeleaf&lt;/artifactId>
+&lt;/dependency>
+</code>
+</pre>
+			<h6>HelloController.java</h6>
 
+<pre>
+<code class="language-java">
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HelloController {
+
+	@RequestMapping("/")
+	public String index(Map&lt;String, Object> model) {
+		model.put("message", "HelloWorld!");
+		
+		return "index";
+	}
+}
+
+</code>
+</pre>
+
+			<h6>src/main/resources/templates/index.html</h6>
+
+<pre>
+<code class="language-html">
+&lt;!DOCTYPE HTML>
+&lt;html xmlns:th="http://www.thymeleaf.org">
+&lt;head>
+&lt;title>HelloWorld!&lt;/title>
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />&lt;/head>
+&lt;body>
+	&lt;div th:text="${message}">&lt;/div>
+&lt;/body>
+&lt;/html>
+</code>
+</pre>
+			<div>위의 소스를 아래와 같은 구조로 작성한다.</div>
+			<img src="./image/view-thymeleaf-01.jpg" alt="" />
+
+			<div>프로젝트 폴더에서 마우스 오른쪽 클릭 -> Run As -> Spring Boot App을 실행한다.</div>
+
+			<div>브라우저에서 http://localhost:8080을 입력하면 HelloWorld!가 출력된다.</div>
+			<img src="./image/view-thymeleaf-03.png" alt="" />
 		</div>
 	</div>
 
