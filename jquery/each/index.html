@@ -36,73 +36,38 @@
 
 			<h6>jQuery.each( array, callback ) 작동예제</h6>
 
-			<table class="table table-bordered">
-				<colgroup>
-					<col width="10%">
-					<col width="40%">
-					<col width="50%">
-				</colgroup>
-				<thead>
-					<tr>
-						<th>Keyword</th>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>array</th>
-						<td>Array</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<th>callback</th>
-						<td>
-							Function( Integer indexInArray, Object value )
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-				</tbody>
-			</table>
+<pre>
+<code class="language-javascript">
+$.each(['kim', 'gyu', 'min'], function(index, value) {
+	console.log(index, value);
+});
+
+/* console print
+0 "kim"
+1 "gyu"
+2 "min"
+*/
+</code>
+</pre>
+			
+
 
 			<h6>jQuery.each( object, callback ) 작동예제</h6>
 
-			<table class="table table-bordered">
-				<colgroup>
-					<col width="10%">
-					<col width="40%">
-					<col width="50%">
-				</colgroup>
-				<thead>
-					<tr>
-						<th>Keyword</th>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>object</th>
-						<td>Object</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<th>callback</th>
-						<td>
-							Function( String propertyName, Object valueOfProperty )
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-				</tbody>
-			</table>
+<pre>
+<code class="language-javascript">
+$.each({"name":"kimgyumin", "age":"37"}, function(key, value) {
+	console.log(key, value);
+});
+
+/* console print
+name kimgyumin
+age 37
+*/
+</code>
+</pre>
+
+			
 
         </div>
     </div>
