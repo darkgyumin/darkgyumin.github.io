@@ -8,7 +8,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/themes/prism.min.css" />
 		<link rel="stylesheet" href="../../css/common.css">
 	</head>
 	<body>
@@ -22,33 +22,28 @@
 	<div class="row">
 		<div class="col-md-12">
 			<span class="" style="float: right;"><a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a></span>
-			<h2>Deploy</h2>
+			<h2>DesignPattern</h2>
+
 		</div>		
 	</div>
 
 	<div class="row mt10">
 		<div class="col-md-12">
+			<h5>FactoryMethod</h5>
 
-			<h5>Jar 배포</h5>
-			
-			<div>Jar 배포시 /WEB-INF/jsp폴더의 jsp파일이 포함되지 않아 404에러가 발생한다. jsp를 사용할 경우 war로 배포하자.(해결방법도 있음)</div>			
-			
-			<div>pom.xml파일을 선택한 뒤에 마우스 오른쪽 버튼 -> Run As -> Maven install을 실행한다.</div>
-			<img src="./image/deploy-01.jpg" alt="" />
-			
-			<div>target폴더에 아래와 같이 .jar파일이 생성된다.</div>
-			<img src="./image/deploy-02.jpg" alt="" />
-			
-			<div>커맨드 창을 열어 java -jar 파일명.jar명령을 실행하면 아래와 같이 실행된다.</div>
-			<img src="./image/deploy-03.png" alt="" />
-			
-			<div>커맨드 창에서 서버 실행시 포트를 변경하고 싶으면 --server.port=포트번호를 추가하여 실행하면 된다.</div>
+			<ul>
+				<li></li>
+			</ul>
+
+			<img src="./image/factoryMethod-01.jpg" alt="" />
+
+			<h6>Java</h6>
+
 <pre>
-<code class="language-bash">
-java -jar ondocCrm-0.0.1-SNAPSHOT.jar --server.port=8080
+<code class="language-java">
+
 </code>
-</pre>
-			
+</pre>			
 
 		</div>
 	</div>
@@ -71,10 +66,7 @@ java -jar ondocCrm-0.0.1-SNAPSHOT.jar --server.port=8080
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-java.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-bash.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/components/prism-properties.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/prism.min.js"></script>
 		<script src="../../script/common.js"></script>
 	</body>
 </html>
