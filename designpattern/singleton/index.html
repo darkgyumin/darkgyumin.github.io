@@ -33,62 +33,52 @@
 
 	<div class="row mt10">
 		<div class="col-md-12">
-			<h5>TemplateMethod</h5>
+			<h5>Singleton</h5>
 
 			<ul>
-				<li>상위클래스에서 처리의 흐름을 정의하고 하위클래스에서 처리를 구체화한다.</li>
+				<li>클래스의 인스턴스가 하나만 생성되도록 하는 패턴</li>
 			</ul>
 
-			<img src="./image/TemplateMethod-01.jpg" alt="" />
+			<img src="./image/singleton-01.jpg" alt="" />
 
 			<h5>Java</h5>
 
+			<h6>Singleton.java</h6>
 <pre>
 <code class="language-java">
-package abst;
-
-public abstract class AbstractClass {
+public class Singleton {
 	
-	public void templateMethod() {
-		
-		operation1();
-		
-		operation2();
-		
+	static private Singleton instance;
+	
+	private Singleton() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	protected abstract void operation1();
-	
-	protected abstract void operation2();
+	static Singleton getInstance() {
+		if(instance == null) {
+			instance = new Singleton();
+		}
+		
+		return instance;
+	}
 }
 </code>
-</pre>
+</pre>			
 
+			<h6>Main.java</h6>
 <pre>
 <code class="language-java">
-package cont;
-
-import abst.AbstractClass;
-
-public class ConcreteClass1 extends AbstractClass {
-
-	@Override
-	protected void operation1() {
-		// TODO Auto-generated method stub
+public class Main {
+	
+	public static void main(String[] args) {
+		Singleton singleton1 = Singleton.getInstance();
+		Singleton singleton2 = Singleton.getInstance();
 		
-		System.out.println("operation1");
+		System.out.println(singleton1 == singleton2);		
 	}
-
-	@Override
-	protected void operation2() {
-		// TODO Auto-generated method stub
-		
-		System.out.println("operation2");
-	}
-
 }
 </code>
-</pre>
+</pre>			
 
 		</div>
 	</div>
