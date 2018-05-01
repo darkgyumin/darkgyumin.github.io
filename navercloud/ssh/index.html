@@ -28,65 +28,70 @@
 
 	<div class="row mt10">
 		<div class="col-md-12">
-			<h5>서버생성</h5>
+			<h5>SSH 접속</h5>
 			
 			<div class="description">
-				<a href="https://console.ncloud.com" target="_blank">https://console.ncloud.com</a><br />
-				위의 url을 클릭하여 네이버 클라우드 플랫폼의 콘솔화면으로 이동한다.<br />
-				콘솔 첫화면에는 현재 사용중인 플랫폼에 대한 정보를 알 수 있는 대쉬보드를 보여준다.<br />
-				서버를 생성하기 위해 왼쪽 All Products > Server를 클릭하여 들어간다.
+				서버를 생성한 뒤에 사용을 위해 리눅스 계열은 ssh로 접속을 해야한다.<br />
+				ssh에 접속하기 위한 순서로는 <strong>관리자 비밀번호 확인</strong> →
+				<strong>포트포워딩 설정</strong> →
+				<strong>ACG 설정</strong> →
+				<strong>ssh 접속</strong>의 과정을 거쳐야 한다.<br />
+				먼저 관리자 비밀번호 확인을 위해 서버 목록에서 마우스 오른쪽 버튼 &gt; 관리자 비밀번호 확인 메뉴를 선택한다.
 			</div>
-			<img src="./image/server_01.jpg" alt="" />
+			<img src="./image/ssh_01.jpg" alt="" />
 			
 			<div class="description">
-				상단의 서버생성 버튼을 클릭한다.
+				마우스로 파일을 끌고 오거나 여기를 클릭하세요란 영역에 서버 생성시 저장한 인증키 파일을 드래그 앤 드롭한 뒤
+				비밀번호 확인 버튼을 클릭한다.
 			</div>
-			<img src="./image/server_02.jpg" alt="" />
-			
+			<img src="./image/ssh_02.jpg" alt="" />
+
 			<div class="description">
-				서버 생성할 이미지를 선택합니다.
+				서버 root계정의 비밀번호를 확인할 수 있다.
 			</div>
-			<img src="./image/server_03.jpg" alt="" />
-			
+			<img src="./image/ssh_03.jpg" alt="" />
+
 			<div class="description">
-				서버 타입과 요금제 및 기타정보를 선택합니다.
+				이번에는 포트포워딩을 설정해야 한다. 생성한 서버에 고정IP가 할당되어 있다면 포트 포워딩 설정이 불필요 하지만
+				처음 서버 생성시에는 고정IP가 할당되어 있지 않고 서버 접속용 공인IP만 제공되므로 설정이 필요하다.<br />
+				포트 포워딩 설정을 위해서는 서버목록 상단의 포트 포워딩 설정 버튼을 클릭한다.
 			</div>
-			<img src="./image/server_04.jpg" alt="" />
-			
+			<img src="./image/ssh_04.jpg" alt="" />
+
 			<div class="description">
-				인증키를 생성하거나 기존 인증키를 선택한다.(최초 서버설치 후 ssh를 통한 원격 접속에 필요한 관리자 비밀번호 확인에 사용되므로 잊어버리면 안됨)
+
 			</div>
-			<img src="./image/server_05.jpg" alt="" />
-			
+			<img src="./image/ssh_05.jpg" alt="" />
+
 			<div class="description">
-				서버에 적용할 ACG를 선택하거나 새로 생성한다.(서버 생성후 ACG에서 22번포트의 접근을 허용해야 ssh를 통한 접근이 가능해짐)
+
 			</div>
-			<img src="./image/server_06.jpg" alt="" />
-			
+			<img src="./image/ssh_06.jpg" alt="" />
+
 			<div class="description">
-				ACG 생성 버튼을 클릭하면 아래와 같이 ACG 이름과 ACG 설정하는 화면이 나타난다.
+
 			</div>
-			<img src="./image/server_07.jpg" alt="" />
-			
+			<img src="./image/ssh_07.jpg" alt="" />
+
 			<div class="description">
-				ACG 이름을 입력하고 ACG 설정을 추가한다.(필요시 나중에 추가하면 되니 ACG 이름만 입력하고 생성해도 됨)
+
 			</div>
-			<img src="./image/server_08.jpg" alt="" />
-			
+			<img src="./image/ssh_08.jpg" alt="" />
+
 			<div class="description">
-				앞의 단계에서 선택한 내용을 확인한 뒤 최종적으로 서버를 생성한다.
+
 			</div>
-			<img src="./image/server_09.jpg" alt="" />
-			
+			<img src="./image/ssh_09.jpg" alt="" />
+
 			<div class="description">
-				서버 리스트 항목에 지금 생성한 서버가 생성중 상태로 나타난다.
+
 			</div>
-			<img src="./image/server_10.jpg" alt="" />
-			
+			<img src="./image/ssh_10.jpg" alt="" />
+
 			<div class="description">
-				서버 생성이 완료되면 운영중 상태로 바뀌며 선택하면 아래와 같이 상세정보가 나타난다.
+
 			</div>
-			<img src="./image/server_11.jpg" alt="" />
+			<img src="./image/ssh_11.jpg" alt="" />
 			
 
 		</div>
