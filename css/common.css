@@ -14,12 +14,13 @@
 .sns img {display: inline-block; width: 30px !important; border: 0; border-radius: 5px; margin: 0 5px 0 0;}
 
 .subject a {margin: 5px 0;}
-.description {margin-top: 10px;}
+.description {margin-top: 10px; padding: 10px; border: 1px #ccc dashed;}
 
 img {margin: 5px 0; border: 1px solid #ccc;}
 
 ul {padding: 0 0 0 20px;}
 
 h2 a {color: #000; text-decoration: none;}
+h5 {margin-top: 20px;}
 h6 {margin-top: 15px; color: #999;}
 strong  {color: #66d9ef;}
