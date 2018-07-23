@@ -46,7 +46,7 @@
 			<h5>ANGULAR CLI 설치</h5>
 
 <pre>
-<code class="language-markup">
+<code class="language-javascript">
 //angular cli 설치하기
 npm install -g @angular/cli
 
@@ -55,10 +55,58 @@ ng update -g @angular/cli
 
 //angular cli 삭제하기
 ng uninstall -g @angular/cli
-
-//
 </code>
 </pre>		
+
+			<h5>ANGULARJS 프로젝트 생성</h5>
+
+<pre>
+<code class="language-javascript">
+//angularjs를 사용하기 위한 프로젝트를 생성한다.
+ng new toh
+</code>
+</pre>
+
+			<h5>ANGULARJS 프로젝트 배포</h5>
+
+<pre>
+<code class="language-javascript">
+//angularjs 프로젝트 배포파일 생성
+ng build --prod
+</code>
+</pre>
+
+<p>
+	위의 명령어 실행시 dist폴더 하위에 배포파일이 생성된다.
+	<img src="./image/setting-01.jpg" alt="" />
+</p>
+
+
+			<h5>Third-Party Library 설치</h5>
+
+			<h6>Bootstrap</h6>
+
+<pre>
+<code class="language-javascript">
+//bootstrap, ng-bootstrap 설치
+npm install --save bootstrap
+npm install --save @ng-bootstrap/ng-bootstrap
+
+npm install --save bootstrap @ng-bootstrap/ng-bootstrap
+</code>
+</pre>	
+
+			<h6>Jquery</h6>
+
+<pre>
+<code class="language-javascript">
+//jquery 설치
+npm install --save jquery
+npm install --save @types/jquery
+
+npm install --save jquery @types/jquery
+</code>
+</pre>	
 
 		</div>
 	</div>
