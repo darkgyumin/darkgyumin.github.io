@@ -26,31 +26,57 @@
 	<div class="row">
 		<div class="col-md-12">
 			<span class="" style="float: right;"><a class="btn btn-dark" href="#" role="button" onclick="history.back();"> Prev </a></span>
-			<h2>AngularJS</h2>
-
+			<h2>환경설정</h2>
 		</div>		
 	</div>
 
+
 	<div class="row mt10">
 		<div class="col-md-12">
-			<h5>Angular-cli 명령어</h5>
+			<h5>NDOE</h5>
+
+			<a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
+			<div class="description">
+				Node.js는 비동기 이벤트 기반의 JavaScript 런타임 환경이다.<br >
+				Vue cli를 사용하기 위해서는 NPM(Node Package Manager)이 필요하다.<br>
+				위의 링크에서 Node를 다운로드 받아 설치하면 NPM이 설치된다.
+			</div>
+
+
+			<h5>VUE CLI 설치(3.X)</h5>
 
 <pre>
 <code class="language-javascript">
-//project create
-ng new 프로젝트명
+//Vue cli 설치하기
+npm install -g @vue/cli
 
-//development server execute
-ng serve --port 4200 --open
-
-
-//component create
-ng g component 컴포넌트명
-
-//service create
-ng g service 서비스명
+//vue cli 버전확인
+vue --version
 </code>
-</pre>			
+</pre>		
+
+			<h5>VUEJS 프로젝트 생성</h5>
+
+<pre>
+<code class="language-javascript">
+//vuejs를 사용하기 위한 프로젝트를 생성한다.
+vue create hello-world
+
+//GUI 모드를 이용한 vuejs 프로젝트를 생성한다.
+vue ui
+</code>
+</pre>
+
+			<h5>vue-router, vuex 추가</h5>
+
+<pre>
+<code class="language-javascript">
+vue add router
+
+vue add vuex
+</code>
+</pre>
+
 
 		</div>
 	</div>
