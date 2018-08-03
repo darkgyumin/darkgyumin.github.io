@@ -31,7 +31,29 @@
 		<div class="col-md-12">
 			<h5>Promise</h5>
 
-	
+			<h6>Promise.all()</h6>
+
+<pre>
+<code class="language-javascript">
+let urls = [
+  'https://jsonplaceholder.typicode.com/users/1',
+  'https://jsonplaceholder.typicode.com/users/2',
+  'https://jsonplaceholder.typicode.com/users/3'
+];
+
+let requests = urls.map(url => fetch(url));
+
+Promise.all(requests)
+  .then(responses => {
+    for(let response of responses) console.log(response.status)
+
+    return responses;
+  })
+  .then(responses => Promise.all(responses.map(res => res.json())))
+  .then(users => {console.log(users)})
+</code>
+</pre>
+
 		</div>
 	</div>
 
