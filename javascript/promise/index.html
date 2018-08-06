@@ -31,6 +31,10 @@
 		<div class="col-md-12">
 			<h5>Promise</h5>
 
+			<div class="description">
+			기존 비동기 처리의 콜백지옥을 개선한 ES6에 새로 추가된 기능이다.
+			</div>
+
 			<h6>Promise.all()</h6>
 
 <pre>
@@ -44,13 +48,14 @@ let urls = [
 let requests = urls.map(url => fetch(url));
 
 Promise.all(requests)
-  .then(responses => {
-    for(let response of responses) console.log(response.status)
-
-    return responses;
-  })
-  .then(responses => Promise.all(responses.map(res => res.json())))
-  .then(users => {console.log(users)})
+.then(responses => {
+for(let response of responses)
+	if(response.status !== 200) return Promise.reject('error')
+	return responses;
+})
+.then(responses => Promise.all(responses.map(res => res.json())))
+.then(datas => {console.log(datas)})
+.catch(error => {console.log(error);})
 </code>
 </pre>
 
