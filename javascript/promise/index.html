@@ -34,6 +34,99 @@
 			<div class="description">
 			기존 비동기 처리의 콜백지옥을 개선한 ES6에 새로 추가된 기능이다.
 			</div>
+
+			<h6>콜백지옥</h6>
+
+			<div class="description">
+			아래 fnStep1, fnStep2의 함수는 인자로 넘어온 callback함수를 각각 3, 2초 후에 실행한다.
+			</div>
+
+<pre>
+<code class="language-javascript">
+let fnStep1 = callback => {
+    setTimeout(() => {
+        if(typeof callback === 'function') callback();
+    }, 3000);
+}
+
+let fnStep2 = callback => {
+    setTimeout(() => {
+        if(typeof callback === 'function') callback();
+    }, 2000);
+}
+</code>
+</pre>
+
+			<div class="description">
+			아래와 같이 callback함수는 비동기 처리가 실행된 후 각각 실행되어 step2가 먼저 출력되고 step1 마지막에 출력된다.
+			</div>
+
+<pre>
+<code class="language-javascript">
+fnStep1(() => {
+    console.log('step1');
+});
+
+fnStep2(() => {
+    console.log('step2');
+});
+
+//return
+//step2
+//step1
+</code>
+</pre>
+		
+			<div class="description">
+			callback함수가 순차적으로 실행되도록 하려면 아래와 같이 callback함수내에 다음 함수를 실행하도록 해야한다.
+			1~2개의 경우는 괜찮지만 이러한 작업이 많아질 경우 <strong>콜백지옥</strong>에 빠지게 된다.
+			</div>
+
+<pre>
+<code class="language-javascript">
+fnStep1(() => {
+	console.log('step1');
+	fnStep2(() => {
+		console.log('step2');
+	});
+});
+
+//return
+//step1
+//step2
+</code>
+</pre>
+
+			<h6>Promise 패턴 도입</h6>
+
+			<div class="description">
+			콜백지옥을 해결하기 위해 제안된 패턴으로 ECMAScript2015에서 표준으로 지정되었다.
+			</div>
+
+<pre>
+<code class="language-javascript">
+new Promise((resolve, reject) => {
+	fnStep1(() => {
+		resolve();
+	});
+}).then(result => {
+	console.log('step1');
+	return new Promise((resolve, result) => {
+		fnStep2(() => {
+			resolve();
+		});
+	});
+}).then(result => {
+	console.log('step2');
+});
+
+//return
+//step1
+//step2
+</code>
+</pre>
+
+
 			
 			<h6>Promise 상태</h6>
 			
@@ -68,6 +161,10 @@
 
 			<h6>Promise.all()</h6>
 
+			<div class="description">
+			다수의 비동기 처리가 모두 완료되었을때 프라미스를 반환하여 이행하고 비동기 처리가 실해하여 reject시 거부하는 프라미스를 반환한다.
+			</div>
+
 <pre>
 <code class="language-javascript">
 let urls = [
@@ -89,6 +186,10 @@ for(let response of responses)
 .catch(error => {console.log(error);})
 </code>
 </pre>
+
+			<h6>Promise.race()</h6>
+			<h6>Promise.reject()</h6>
+			<h6>Promise.resolve()</h6>
 
 		</div>
 	</div>
