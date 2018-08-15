@@ -29,9 +29,30 @@
 
 	<div class="row mt10">
 		<div class="col-md-12">
-			<h5>async, await</h5>
+			<h5>Template literal</h5>
 
-			
+			<div class="description">
+				
+			</div>
+
+			<h6>let</h6>
+
+			<div class="description">
+				변수를 선언하며 블록단위 스코프로 동작한다.
+			</div>
+
+<pre>
+<code class="language-javascript">
+{
+	let variable;
+	console.log(variable);  //변수가 선언만 되어 있으므로 undefined가 출력
+}
+
+console.log(variable);  
+//Uncaught ReferenceError: variable is not defined 
+//블록을 벗어난 지역에서 변수에 접근하려고 하면 위와 같이 에러가 발생한다.
+</code>
+</pre>
 
 		</div>
 	</div>

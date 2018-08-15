@@ -29,9 +29,50 @@
 
 	<div class="row mt10">
 		<div class="col-md-12">
-			<h5>async, await</h5>
+			<h5>let, const</h5>
 
-			
+			<div class="description">
+				기존의 ES5에서 사용되었던 함수단위 스코프로 변수선언에서 사용되었던 var의 단점들을 보완하기 위해 ES6에서 새로 추가된 기능으로 let과 const는
+				블록단위 스코프이다.
+			</div>
+
+			<h6>let</h6>
+
+			<div class="description">
+				변수를 선언하며 블록단위 스코프로 동작한다.
+			</div>
+
+<pre>
+<code class="language-javascript">
+{
+	let variable;
+	console.log(variable);  //변수가 선언만 되어 있으므로 undefined가 출력
+}
+
+console.log(variable);  
+//Uncaught ReferenceError: variable is not defined 
+//블록을 벗어난 지역에서 변수에 접근하려고 하면 위와 같이 에러가 발생한다.
+</code>
+</pre>
+
+			<h6>const</h6>
+
+			<div class="description">
+				상수를 선언하며 블록단위 스코프로 동작한다. 
+			</div>
+
+<pre>
+<code class="language-javascript">
+const variable = '';
+console.log(variable);  
+//const는 선언즉시 값이 할당되어야 한다.
+
+variable = 'val' 
+//Uncaught Error: "variable" is read-only
+//const로 선언된 상수의 값을 변경하려고 하면 위와 같은 에러가 발생한다.
+</code>
+</pre>
+
 
 		</div>
 	</div>
