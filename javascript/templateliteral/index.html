@@ -32,25 +32,33 @@
 			<h5>Template literal</h5>
 
 			<div class="description">
-				
+				멀티라인 문자열과 보간기능을 사용하며 백틱(``)을 사용한다.
 			</div>
 
-			<h6>let</h6>
-
-			<div class="description">
-				변수를 선언하며 블록단위 스코프로 동작한다.
-			</div>
 
 <pre>
 <code class="language-javascript">
-{
-	let variable;
-	console.log(variable);  //변수가 선언만 되어 있으므로 undefined가 출력
-}
+let string = `string
+text`;
 
-console.log(variable);  
-//Uncaught ReferenceError: variable is not defined 
-//블록을 벗어난 지역에서 변수에 접근하려고 하면 위와 같이 에러가 발생한다.
+console.log(string);
+//string
+//text
+
+
+let val = '김규민';
+let string = `string text ${val}`;
+
+console.log(string);
+//string text 김규민
+
+let price = 1000;
+let num = 5;
+
+let string = `this price is ${price * num}`
+
+console.log(string);
+//this price is 5000
 </code>
 </pre>
 
