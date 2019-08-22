@@ -36,13 +36,53 @@
 			<img src="./image/lifecycle01.png" alt="" />
 			<h5>router 설치</h5>
 
+			<div class="description">
+				아래의 명령을 실행하면 vue router가 설치되고 프로젝트에 관련파일(<strong>views/About.vue</strong>, <strong>vues/Home.vue</strong>, <strong>router.js</strong>)이 자동으로 생성된다.
+			</div>
+
 <pre>
 <code class="language-javascript">
 vue add router
 </code>
 </pre>
 
+            <h6>router.js</h6>
 
+            <div class="description">
+                router.js파일에는 아래와 같이
+            </div>
+<pre>
+<code class="language-javascript">
+&lt;script>
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    }
+  ]
+})
+
+&lt;/script>
+</code>
+</pre>
 
 
 
